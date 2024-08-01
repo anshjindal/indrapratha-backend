@@ -11,3 +11,7 @@ app.get('/data', (req, res) => {
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
+
+app.get('/test', (req, res) => {
+  res.json({ status: 'Server is up and running!', timestamp: new Date() });
+});
