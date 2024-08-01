@@ -1,17 +1,26 @@
 const express = require('express');
+const cors = require('cors');  // Import the CORS middleware
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 
+// Use CORS middleware to allow requests from your frontend
+app.use(cors({
+  origin: 'https://indraprastha-frontend.vercel.app' // Allow requests from this domain
+}));
+
+// Middleware for parsing JSON
 app.use(express.json());
 
+// Define your routes
 app.get('/data', (req, res) => {
   res.json({ message: 'Hello from the server!' });
 });
 
-app.listen(port, () => {
-  console.log(`Server running on port ${port}`);
-});
-
 app.get('/test', (req, res) => {
   res.json({ status: 'Server is up and running!', timestamp: new Date() });
+});
+
+// Start the server
+app.listen(port, () => {
+  console.log(`Server running on port ${port}`);
 });
