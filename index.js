@@ -5,7 +5,7 @@ const port = process.env.PORT || 3000;
 
 // Use CORS middleware to allow requests from your frontend
 app.use(cors({
-  origin: 'https://indraprastha-frontend.vercel.app' // Allow requests from this domain
+  origin: 'https://dev.indraprasthasewa.in' // Allow requests from this domain
 }));
 
 // Middleware for parsing JSON
