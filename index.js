@@ -12,10 +12,6 @@ app.use(cors({
 app.use(express.json());
 
 // Define your routes
-app.get('/', (res, res)=> {
-  res.json({message: "Welcome to Indraprastha Backend Server"})
-})
-
 
 app.get('/data', (req, res) => {
   res.json({ message: 'Hello from the server!' });
